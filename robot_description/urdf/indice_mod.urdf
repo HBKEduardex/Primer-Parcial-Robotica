@@ -1,0 +1,140 @@
+<robot name="indice">
+	<link name="index_link0_passive">
+		<visual>
+			<material name="blue">
+				<color rgba="0 0 .8 1"/>
+			</material>
+			<geometry>
+				<origin xyz="0 0 0" rpy="0 0 0"/>
+				<cylinder length="0.0" radius="0.0"/>
+			</geometry>
+		</visual>
+	</link>
+	<link name="index_link0_x_axis">
+		<visual>
+			<material name="red">
+				<color rgba="1 0 0 1"/>
+			</material>
+			<geometry>
+				<origin xyz="0 0 0" rpy="0 0 0"/>
+				<cylinder length="0.0" radius="0.0"/>
+			</geometry>
+		</visual>
+	</link>
+	<joint name="index_q0_x" type="fixed">
+		<origin xyz="0 0 0" rpy="0 1.571 0"/>
+		<parent link="index_link0_passive"/>
+		<child link="index_link0_x_axis"/>
+	</joint>
+
+	<link name="index_link1"/>
+	<link name="index_link1_x_axis">
+		<visual>
+			<origin xyz="0 0 0.25" rpy="0 0 0"/>
+			<material name="red"/>
+			<geometry>
+				<cylinder length="0.5" radius="0.05"/>
+			</geometry>
+		</visual>
+	</link>
+	<joint name="index_q11" type="revolute">
+		<origin xyz="0 0 0" rpy="0 0 0"/>
+		<parent link="index_link0_passive"/>
+		<child link="index_link1"/>
+		<axis xyz="0 0 1"/>
+        <limit effort="300" velocity="0.1" lower="-3.1416" upper="3.1416"/>
+	</joint>
+	<joint name="index_q1_passive" type="fixed">
+		<origin xyz="2 0 0" rpy="0 0 0"/>
+		<parent link="index_link1"/>
+		<child link="index_link1_passive"/>
+	</joint>
+	<link name="index_link1_passive">
+		<visual>
+			<origin xyz="0 0 0.25" rpy="0 0 0"/>
+			<material name="blue"/>
+			<geometry>
+				<cylinder length="0.5" radius="0.05"/>
+			</geometry>
+		</visual>
+	</link>
+	<joint name="index_q1_x" type="fixed">
+		<origin xyz="0 0 0" rpy="0 1.571 0"/>
+		<parent link="index_link1_passive"/>
+		<child link="index_link1_x_axis"/>
+	</joint>
+
+	<link name="index_link2"/>
+	<link name="index_link2_x_axis">
+		<visual>
+			<origin xyz="0 0 0.25" rpy="0 0 0"/>
+			<material name="red"/>
+			<geometry>
+				<cylinder length="0.5" radius="0.05"/>
+			</geometry>
+		</visual>
+	</link>
+	<joint name="index_q12" type="revolute">
+		<origin xyz="0 0 0" rpy="0 0 0"/>
+		<parent link="index_link1_passive"/>
+		<child link="index_link2"/>
+		<axis xyz="0 0 1"/>
+        <limit effort="300" velocity="0.1" lower="-3.1416" upper="3.1416"/>
+	</joint>
+	<joint name="index_q2_passive" type="fixed">
+		<origin xyz="1.5 0 0" rpy="0 0 0"/>
+		<parent link="index_link2"/>
+		<child link="index_link2_passive"/>
+	</joint>
+	<link name="index_link2_passive">
+		<visual>
+			<origin xyz="0 0 0.25" rpy="0 0 0"/>
+			<material name="blue"/>
+			<geometry>
+				<cylinder length="0.5" radius="0.05"/>
+			</geometry>
+		</visual>
+	</link>
+	<joint name="index_q2_x" type="fixed">
+		<origin xyz="0 0 0" rpy="0 1.571 0"/>
+		<parent link="index_link2_passive"/>
+		<child link="index_link2_x_axis"/>
+	</joint>
+
+	<link name="index_link3"/>
+	<link name="index_link3_x_axis">
+		<visual>
+			<origin xyz="0 0 0.25" rpy="0 0 0"/>
+			<material name="red"/>
+			<geometry>
+				<cylinder length="0.5" radius="0.05"/>
+			</geometry>
+		</visual>
+	</link>
+	<joint name="index_q13" type="revolute">
+		<origin xyz="0 0 0" rpy="0 0 0"/>
+		<parent link="index_link2_passive"/>
+		<child link="index_link3"/>
+		<axis xyz="0 0 1"/>
+        <limit effort="300" velocity="0.1" lower="-3.1416" upper="3.1416"/>
+	</joint>
+	<joint name="index_q3_passive" type="fixed">
+		<origin xyz="0.8 0 0" rpy="0 0 0"/>
+		<parent link="index_link3"/>
+		<child link="index_link3_passive"/>
+	</joint>
+	<link name="index_link3_passive">
+		<visual>
+			<origin xyz="0 0 0.25" rpy="0 0 0"/>
+			<material name="blue"/>
+			<geometry>
+				<cylinder length="0.5" radius="0.05"/>
+			</geometry>
+		</visual>
+	</link>
+	<joint name="index_q3_x" type="fixed">
+		<origin xyz="0 0 0" rpy="0 1.571 0"/>
+		<parent link="index_link3_passive"/>
+		<child link="index_link3_x_axis"/>
+	</joint>
+</robot>
