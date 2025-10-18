@@ -41,3 +41,8 @@ ros2 launch robot_description cinematica_inversa_hand.launch.py
 
 # Ejecutar la cinemática inversa completa
 ros2 run visual_pubsub inverse_kinematics_hand
+
+#Ejecucion de los nodos 1, 2, 3 y 4
+ros2 launch ejer1 all_nodes.launch.py
+#Ejecucion del nodo 5, indicando en consola el promedio y el nombre de los topicos
+ros2 run ejer1 nodo5_sub
